@@ -5,6 +5,7 @@ const massive = require('massive');
 
 // CONTROLLERS
 const uc = require('./controllers/user_controller');
+const mc = require('./controllers/messages_controller');
 
 // ENV
 const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env;
@@ -39,3 +40,12 @@ app.post('/api/login', uc.login);
 app.post('/api/logout', uc.logout);
 
 // MESSAGE ENDPOINTS
+app.get('/api/messages', mc.getAll);
+
+app.get('/api/message/:id', mc.getMessage);
+
+app.post('/api/message', mc.addMessage);
+
+app.delete('/api/message/:id', mc.deleteMessage);
+
+app.put('/api/message/:id', mc.updateMessage);

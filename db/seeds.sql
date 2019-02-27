@@ -20,7 +20,7 @@ values('Hunter', 'password'),
 insert into messages
 (user_id, message)
 values(1, 'What up Clay?'),
-      (2. 'Not much man. Just chilllllinnnn!');
+      (2, 'Not much man. Just chilllllinnnn!');
 
 select * from messages m
 join users u 
